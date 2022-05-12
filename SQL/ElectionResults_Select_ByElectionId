@@ -1,0 +1,45 @@
+USE [Interrogas]
+GO
+/****** Object:  StoredProcedure [dbo].[ElectionResults_Select_ByElectionId]    Script Date: 5/12/2022 7:06:52 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE proc [dbo].[ElectionResults_Select_ByElectionId]
+
+@Id int
+
+-- =============================================
+-- Author:		<Jeff Moya>
+-- Create date: <4/9/2022>
+-- Description:	<SelectByElectionId for ElectionResults table>
+-- =============================================
+
+as
+
+/*
+
+Declare @Id Int = 1;
+Execute [dbo].[ElectionResults_Select_ByElectionId] @Id
+
+*/
+
+BEGIN
+
+SELECT e.ElectionId
+		,c.[GivenName]
+      ,c.[Surnames]	 
+	  ,[Party]=(Select p.[Name] from dbo.Parties as p where c.PartyId=p.Id)
+	  ,e.Votes
+	  ,e.[Percentage]
+	 
+	  ,TotalCount = COUNT(1) OVER() -- this the quick way of doing the count. (see below)
+
+	FROM [dbo].[ElectionResults] as e INNER JOIN dbo.Candidates as c
+							ON e.CandidateId = c.Id
+	
+	Where e.ElectionId = @Id    
+
+END
+GO
