@@ -1,0 +1,66 @@
+USE [Interrogas]
+GO
+/****** Object:  StoredProcedure [dbo].[ElectionResults_Search]    Script Date: 5/12/2022 7:06:52 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE proc [dbo].[ElectionResults_Search]
+
+@PageIndex int
+,@PageSize int
+,@Query nvarchar(100)
+
+-- =============================================
+-- Author:		<Jeff Moya>
+-- Create date: <4/11/2022>
+-- Description:	<SelectByElectionId for ElectionResults table>
+-- =============================================
+
+as
+
+/*
+
+DECLARE @Query nvarchar(100) = 'vila'
+	   ,@PageIndex int = 1
+	   ,@PageSize int = 4
+Execute dbo.ElectionResults_Search
+		@PageIndex
+	   ,@PageSize
+	   ,@Query
+
+*/
+
+BEGIN
+
+Declare @offset int = @PageIndex * @PageSize
+
+SELECT er.ElectionId
+		,er.CandidateId
+		,e.ElectionDate
+		,c.[GivenName]
+      ,c.[Surnames]	 
+	  ,[Party]=(Select p.[Name] from dbo.Parties as p where c.PartyId=p.Id)
+	  ,er.Votes
+	  ,er.[Percentage]
+	  ,c.AvatarUrl
+	 
+	  ,TotalCount = COUNT(1) OVER() -- this the quick way of doing the count. (see below)
+
+	FROM [dbo].[ElectionResults] as er INNER JOIN dbo.Candidates as c
+							ON er.CandidateId = c.Id
+							INNER JOIN dbo.Elections as e
+							ON er.ElectionId = e.Id
+	
+	WHERE (Surnames LIKE '%' + @Query + '%')
+
+	ORDER BY er.ElectionId
+
+	OFFSET @offSet Rows
+	Fetch Next @PageSize Rows ONLY
+
+END
+
+
+GO
