@@ -1,0 +1,64 @@
+.text-align-left{
+    text-align: left !important;
+}
+
+.text-align-center{
+    text-align: center !important;
+    padding-top: 50% !important;
+    padding-bottom: 50% !important;
+    max-height: 90px;
+}
+
+.align-items-center{
+    align-items: center !important;
+    margin: 0;
+}
+
+.candidate-card{
+    padding: 1rem 1rem !important;
+}
+
+.border-right{
+    border-right: solid grey 2px;
+}
+
+.card-body-size{
+    height: 10px;
+}
+
+.pad-remove{
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.text-width{
+    max-width: 15ch;
+}
+
+.sab-text-right{
+    position: absolute;
+    right: 51%;
+}
+
+.page-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 12vh;
+        font-size: 50px;
+        font-style: bold;
+}
+
+.sub-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+    font-size: 35px;
+}
+
+.image-logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

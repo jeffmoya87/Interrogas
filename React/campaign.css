@@ -1,0 +1,42 @@
+.cardScroll {
+    overflow-y: scroll;
+    width: auto;
+}
+
+.cardScroll::-webkit-scrollbar {
+    display: none;
+}
+
+.divCenter {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+.cardCenter {
+    justify-content: center;
+}
+
+.cardHeight {
+    max-height: 600px;
+    min-height: 600px;
+}
+
+.rowPadding {
+    padding-bottom: 20px;
+}
+
+.cardSticky{
+    position: sticky;
+}
+
+.dashboardTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+}
+
+.paddingRight{
+    padding-right: 10px;
+}
