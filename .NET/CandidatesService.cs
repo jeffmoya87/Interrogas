@@ -1,15 +1,15 @@
-﻿using Sabio.Data;
-using Sabio.Data.Providers;
-using Sabio.Models;
+﻿using Data;
+using Data.Providers;
+using Models;
 
-using Sabio.Models.Domain.Candidates;
-using Sabio.Models.Requests.Candidates;
+using Models.Domain.Candidates;
+using Models.Requests.Candidates;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Dynamic;
 
-namespace Sabio.Services.Candidates
+namespace Services.Candidates
 {
     public class CandidateService : ICandidateService
     {
