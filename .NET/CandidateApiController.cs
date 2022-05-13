@@ -1,22 +1,22 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Sabio.Models;
-using Sabio.Models.Domain.Candidates;
-using Sabio.Models.Domain;
-using Sabio.Models.Requests;
-using Sabio.Models.Requests.Candidates;
-using Sabio.Services;
-using Sabio.Services.Candidates;
-using Sabio.Web.Controllers;
-using Sabio.Web.Models.Responses;
+using My.Models;
+using My.Models.Domain.Candidates;
+using My.Models.Domain;
+using My.Models.Requests;
+using My.Models.Requests.Candidates;
+using My.Services;
+using My.Services.Candidates;
+using My.Web.Controllers;
+using My.Web.Models.Responses;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using Microsoft.AspNetCore.Authorization;
 
-namespace Sabio.Web.Api.Controllers.Candidates
+namespace My.Web.Api.Controllers.Candidates
 {
   
     [Route("api/candidates")]
