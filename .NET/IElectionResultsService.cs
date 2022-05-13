@@ -1,13 +1,13 @@
-﻿using Sabio.Models;
-using Sabio.Models.Domain;
-using Sabio.Models.Domain.WebScraping;
+﻿using System.Models;
+using System.Models.Domain;
+using System.Models.Domain.WebScraping;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sabio.Services.Interfaces
+namespace System.Services.Interfaces
 {
     public interface IElectionResultsService
     {
