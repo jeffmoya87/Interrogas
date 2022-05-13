@@ -1,9 +1,9 @@
-﻿using Sabio.Models;
-using Sabio.Models.Domain.Candidates;
-using Sabio.Models.Requests.Candidates;
+﻿using System.Models;
+using System.Models.Domain.Candidates;
+using System.Models.Requests.Candidates;
 using System.Collections.Generic;
 
-namespace Sabio.Services.Candidates
+namespace System.Services.Candidates
 {
     public interface ICandidateService
     {
