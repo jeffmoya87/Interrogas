@@ -1,10 +1,10 @@
 ﻿using HtmlAgilityPack;
-using Sabio.Data;
-using Sabio.Data.Providers;
-using Sabio.Models;
-using Sabio.Models.Domain;
-using Sabio.Models.Domain.WebScraping;
-using Sabio.Services.Interfaces;
+using System.Data;
+using System.Data.Providers;
+using System.Models;
+using System.Models.Domain;
+using System.Models.Domain.WebScraping;
+using System.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,7 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Sabio.Services
+namespace System.Services
 {
     public class ElectionResultsService : IElectionResultsService
     {
